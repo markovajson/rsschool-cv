@@ -24,158 +24,158 @@ I have experience working with Confluence, Jira, Service Desk and MS Office. Bas
 
         namespace AlgorithmD
         {
-        class Program 
-        {
-        static void Swap(ref int a1, ref int a2)
-        {
-
-            var tmp = a1;
-            a1 = a2;
-            a2 = tmp;
-
-
-        }
-
-        static int[] QuickSort(int[] arr, int minIndex, int maxIndex)
-        {
-
-            if (minIndex >= maxIndex)
+            class Program 
             {
-
-                return arr;
-
-            }
-
-            int pivotIndex = GetPivotIndex(arr, minIndex, maxIndex);
-
-            QuickSort(arr, minIndex, pivotIndex - 1);
-
-            QuickSort(arr, pivotIndex + 1, maxIndex);
-
-            return arr;
-
-
-
-        }
-
-        static int GetPivotIndex(int[] arr, int minIndex, int maxIndex)
-        {
-            int pivot = minIndex - 1;
-
-            for (int i = minIndex; i <= maxIndex; i++)
-            {
-                if (arr[i] < arr[maxIndex])
+                static void Swap(ref int a1, ref int a2)
                 {
+
+                    var tmp = a1;
+                    a1 = a2;
+                    a2 = tmp;
+
+
+                }
+
+                static int[] QuickSort(int[] arr, int minIndex, int maxIndex)
+                {
+
+                    if (minIndex >= maxIndex)
+                    {
+
+                        return arr;
+
+                    }
+
+                    int pivotIndex = GetPivotIndex(arr, minIndex, maxIndex);
+
+                    QuickSort(arr, minIndex, pivotIndex - 1);
+
+                    QuickSort(arr, pivotIndex + 1, maxIndex);
+
+                    return arr;
+
+
+
+                }
+
+                static int GetPivotIndex(int[] arr, int minIndex, int maxIndex)
+                {
+                    int pivot = minIndex - 1;
+
+                    for (int i = minIndex; i <= maxIndex; i++)
+                    {
+                        if (arr[i] < arr[maxIndex])
+                        {
+
+                            pivot++;
+                            Swap(ref arr[pivot], ref arr[i]);
+
+                        }
+
+                    }
 
                     pivot++;
-                    Swap(ref arr[pivot], ref arr[i]);
+                    Swap(ref arr[pivot], ref arr[maxIndex]);
+
+                    return pivot;
 
                 }
 
-            }
+                static void Main(string[] args)
+                {
+                    Console.Write("Введите кол-во элементов в ряду: ");
+                    int range = Convert.ToInt32(Console.ReadLine());
 
-            pivot++;
-            Swap(ref arr[pivot], ref arr[maxIndex]);
+                    int[] line = new int[range];
 
-            return pivot;
+                    Console.Write("Введите элементы ряда: ");
 
-        }
-
-        static void Main(string[] args)
-        {
-            Console.Write("Введите кол-во элементов в ряду: ");
-            int range = Convert.ToInt32(Console.ReadLine());
-
-            int[] line = new int[range];
-
-            Console.Write("Введите элементы ряда: ");
-
-            for (int i = 0; i < range; i++)
-            {
-           
-                line[i] = Convert.ToInt32(Console.ReadLine()); 
+                    for (int i = 0; i < range; i++)
+                    {
                 
+                        line[i] = Convert.ToInt32(Console.ReadLine()); 
+                        
 
-            }
+                    }
 
 
-            Console.Write("\n");
-            
-            int j = range - 1;
+                    Console.Write("\n");
+                    
+                    int j = range - 1;
 
-            for (int i = range - 1; i >= 0; i--)
-            {
-                if (line[i - 1] >= line[i])
-                {
+                    for (int i = range - 1; i >= 0; i--)
+                    {
+                        if (line[i - 1] >= line[i])
+                        {
 
-                    j--;
+                            j--;
+
+
+                        }
+
+                        else
+                        {
+
+                            break;
+
+                        }
+
+
+
+                    }
+
+                    Console.Write("Первый элемент после хвоста: ");
+                    Console.WriteLine(line[j - 1]);
+
+                    Console.Write("\n");
+                    
+                    int k = range - 1; ;
+
+                    for (int i = range - 1; i >= j - 1; i--)
+                    {
+                        if (line[i] <= line[j - 1])
+                        {
+
+                        k--;
+
+
+                        }
+
+                        else
+                        {
+
+                            Swap(ref line[j - 1], ref line[k]);
+                            break;
+
+                        }
+
+                    
+
+
+
+                    }
+
+                    Console.Write("Первый элемент после хвоста после обмена: ");
+                    Console.WriteLine(line[j - 1]);
+
+                    Console.Write("\n");
+
+                    Console.WriteLine("Перестановка: ");
+
+
+                    QuickSort(line, j, range - 1);
+
+                    for (int i  = 0; i <= range - 1; i++)
+                    {
+
+                        Console.WriteLine(line[i]);
+
+
+                    }
 
 
                 }
-
-                else
-                {
-
-                    break;
-
-                }
-
-
-
             }
-
-            Console.Write("Первый элемент после хвоста: ");
-            Console.WriteLine(line[j - 1]);
-
-            Console.Write("\n");
-            
-            int k = range - 1; ;
-
-            for (int i = range - 1; i >= j - 1; i--)
-            {
-                if (line[i] <= line[j - 1])
-                {
-
-                   k--;
-
-
-                }
-
-                else
-                {
-
-                    Swap(ref line[j - 1], ref line[k]);
-                    break;
-
-                }
-
-               
-
-
-
-            }
-
-            Console.Write("Первый элемент после хвоста после обмена: ");
-            Console.WriteLine(line[j - 1]);
-
-            Console.Write("\n");
-
-            Console.WriteLine("Перестановка: ");
-
-
-            QuickSort(line, j, range - 1);
-
-            for (int i  = 0; i <= range - 1; i++)
-            {
-
-                Console.WriteLine(line[i]);
-
-
-            }
-
-
-        }
-        }
         }
 ---
 ## Work experience
