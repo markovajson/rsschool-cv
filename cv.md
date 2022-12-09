@@ -177,6 +177,7 @@ I have experience working with Confluence, Jira, Service Desk and MS Office. Bas
                 }
             }
         }
+        
 ---
 ## Work experience
 * PC operator/Manager (June 2022 - August 2022, RX Group) 
