@@ -20,7 +20,7 @@ I have experience working with Confluence, Jira, Service Desk and MS Office. Bas
 * English level B2.
 ---
 ## Code example (C#, Dijkstra's algorithm)
-<using System;
+using System;
 
 namespace AlgorithmD
 {
@@ -176,7 +176,7 @@ namespace AlgorithmD
 
         }
     }
-}>
+}
 ---
 ## Work experience
 * PC operator/Manager (June 2022 - August 2022, RX Group) 
